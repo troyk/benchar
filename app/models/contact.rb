@@ -1,7 +1,7 @@
-class Contact < ActiveRecord::Base
-  has_many :charges
+class Contact < Sequel::Model
+  one_to_many :charges, :class=>"Contact::Charge"
 end
 
-class Contact::Charge < ActiveRecord::Base
-  belongs_to :contact
+class Contact::Charge < Sequel::Model(:contact_charges)
+  many_to_one :contact
 end
