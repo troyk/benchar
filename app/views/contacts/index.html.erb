@@ -1,0 +1,4 @@
+<% @contacts.each do |contact| %>
+  <h3><%= contact.first_name %> <%= contact.last_name %> (<%= contact.email %>)</h3>
+  <%= contact.charges.map{|c| c.amount} %>
+<% end %>

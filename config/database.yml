@@ -1,0 +1,14 @@
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: 10
+  database: 3strands
+
+development:
+  <<: *default
+test:
+  <<: *default
+production:
+  <<: *default
+  #username: benchar
+  #password: <%= ENV['BENCHAR_DATABASE_PASSWORD'] %>
